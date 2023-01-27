@@ -1,0 +1,6 @@
+.container{
+    border: 10px solid #ffb700e9;
+}
+.boardRow {
+    display: flex;
+}

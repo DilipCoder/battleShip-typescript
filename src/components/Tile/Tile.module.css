@@ -1,0 +1,13 @@
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: 40px;
+    border: 1px solid #3d3c3c;
+}
+
+.tileStatusIcon {
+    width: 40%;
+    height: auto;
+}

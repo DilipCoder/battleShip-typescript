@@ -1,24 +1,42 @@
-import React from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Game from './components/Game/Game';
+import data from './data.json';
+import useGame from './hooks/useGame';
+import Modal from './components/Model/Model';
 
 function App() {
+  const {board, ships, shipSunk, isGameOver, resetShipSunk, handleFire} = useGame();
+  console.log('ships', ships);
+  console.log('board', board);
+  useEffect(()=> {
+    let timeout:any;
+    if(shipSunk){
+      timeout = setTimeout(()=> {
+        resetShipSunk();
+      }, 5000)
+    }
+    return () => {
+      clearTimeout(timeout)
+    }
+  }, [shipSunk]);
+
   return (
     <div className="App">
+      {shipSunk && <Modal><p>{`Ship ${shipSunk} sunk`}</p></Modal>}
+      {isGameOver && <Modal><p>Game Over</p></Modal>}
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>BattleShip Game</h1>
+        <p>Press on any box to attack on ships</p>
       </header>
+      <div className='conatiner'>
+        <Game 
+          ships={ships}
+          board={board}
+          handleFire={handleFire}
+        />
+      </div>
     </div>
   );
 }

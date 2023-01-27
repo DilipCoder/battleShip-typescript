@@ -1,0 +1,15 @@
+.playersContainer{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width: 568px) {
+    .playersContainer{
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+
+}

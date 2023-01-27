@@ -1,0 +1,29 @@
+.shipsConainer{
+    display: block;
+}
+
+@media (max-width: 568px) {
+    .shipsConainer{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .ShipsItem{
+        flex: 50%;
+    }
+    .ShipsItem:last-of-type{
+       display: flex;
+    }
+}
+
+@media (max-width: 768px) {
+    .shipsConainer{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .ShipsItem{
+        flex: 50%;
+    }
+    .ShipsItem:last-of-type{
+        display: flex;
+    }
+}

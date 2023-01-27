@@ -1,0 +1,40 @@
+.shipContainer{
+    flex: 0 0 50%;
+    padding: 10px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.shipStatusIcon {
+    width: 10%;
+    height: auto;
+}
+
+.shipImage {
+    width: 80%;
+    height: auto;
+}
+
+@media (max-width: 568px) {
+    .shipStatusIcon {
+        width: 15%;
+        height: auto;
+    }
+    
+    .shipImage {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .shipStatusIcon {
+        width: 20%;
+        height: auto;
+    }
+    
+    .shipImage {
+        width: 100%;
+        height: auto;
+    }
+}
