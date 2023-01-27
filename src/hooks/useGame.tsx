@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useMemo, useState} from 'react';
+import {useCallback, useEffect, useState} from 'react';
 import data from '../data.json';
 
 
@@ -60,11 +60,11 @@ const useGame = () => {
   // intial setup
   useEffect(() => {
     loadIntialGame();
-  }, []);
+  }, [loadIntialGame]);
 
   // check if game is over
   useEffect(() => {
-    if(totalHitCount == totalShipSize){
+    if(totalHitCount === totalShipSize){
       setGameOver(true);
     }
   }, [totalHitCount, totalShipSize]);
@@ -75,13 +75,13 @@ const useGame = () => {
     const updatedShips = {
       ...ships,
       [shipId]:{
-        ... ships[shipId],
+        ...ships[shipId],
         hitCount: count
       }
     }
     setShips(updatedShips);
     setTotalHitCount(totalHitCount + 1);
-    if(ships[shipId].size == count){
+    if(ships[shipId].size === count){
       setShipSunk(shipId);
     }
   }, [ships, totalHitCount]);

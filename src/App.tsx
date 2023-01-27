@@ -1,8 +1,6 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import logo from './logo.svg';
+import {useEffect } from 'react';
 import './App.css';
 import Game from './components/Game/Game';
-import data from './data.json';
 import useGame from './hooks/useGame';
 import Modal from './components/Model/Model';
 
@@ -20,7 +18,7 @@ function App() {
     return () => {
       clearTimeout(timeout)
     }
-  }, [shipSunk]);
+  }, [shipSunk, resetShipSunk]);
 
   return (
     <div className="App">

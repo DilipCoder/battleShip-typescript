@@ -1,8 +1,6 @@
 import * as React from 'react';
-import Tile, { ITile } from '../Tile/Tile';
+import Tile from '../Tile/Tile';
 import styles from './Board.module.css';
-
-const DEFAULT_SIZE = 10;
 
 interface IBoardProps {
    board: number[][]| string[][];
